@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-zenii",
+  "name": "guaigua.digital",
   "private": true,
-  "description": "A One-page Gatsby starter built with Tailwindcss and  Postcss",
+  "description": "¿Necesitas vender en el mundo digital? Tenemos las mejores herramientas para ti.",
   "version": "1.0.0",
   "license": "0BSD",
   "scripts": {
@@ -34,7 +34,6 @@
     "gatsby-transformer-sharp": "^2.5.11",
     "glider-js": "^1.7.3",
     "inquirer": "^7.3.3",
-    "mdbreact": "^4.27.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -54,9 +53,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/thebakerdev/gatsby-starter-zenii"
+    "url": "https://github.com/guaigua/guaigua.digital"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/guaigua/guaigua.digital/issues"
   }
 }

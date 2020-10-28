@@ -4,9 +4,13 @@ require("dotenv").config({
 
 module.exports = {
     siteMetadata: {
-        title: `Zenii`,
-        description: `A One-page Gatsby starter built with Tailwindcss and  Postcss.`,
-        author: `The Bakerdev`,
+        title: `guaigua.digital`,
+        siteUrl: `https://www.guaigua.digital`,
+        description: `¿Necesitas vender en el mundo digital? Tenemos las mejores herramientas para ti.`,
+        author: `guaigua.digital`,
+        locale: `es`,
+        image: "/assets/images/logo.png",
+        twitterUsername: `@guaiguadigital`,
     },
     plugins: [
         {
