@@ -74,6 +74,15 @@ const onRouteUpdate = (location, prevLocation) => {
 };
 
 const navigate = (to, options = {}) => {
+  // Support forward/backward navigation with numbers
+  // navigate(-2) (jumps back 2 history steps)
+  // navigate(2)  (jumps forward 2 history steps)
+  if (typeof to === `number`) {
+    _history.globalHistory.navigate(to);
+
+    return;
+  }
+
   let {
     pathname
   } = (0, _gatsbyLink.parsePath)(to);
@@ -251,19 +260,19 @@ class RouteUpdates extends _react.default.Component {
     onRouteUpdate(this.props.location, null);
   }
 
-  componentDidUpdate(prevProps, prevState, shouldFireRouteUpdate) {
-    if (shouldFireRouteUpdate) {
-      onRouteUpdate(this.props.location, prevProps.location);
-    }
-  }
-
-  getSnapshotBeforeUpdate(prevProps) {
-    if (this.props.location.pathname !== prevProps.location.pathname) {
+  shouldComponentUpdate(prevProps) {
+    if (this.props.location.href !== prevProps.location.href) {
       onPreRouteUpdate(this.props.location, prevProps.location);
       return true;
     }
 
     return false;
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.location.href !== prevProps.location.href) {
+      onRouteUpdate(this.props.location, prevProps.location);
+    }
   }
 
   render() {
